@@ -28,16 +28,16 @@ echoLog (){
 
 if [ -z "$1" ] ;then
   echoLog ERROR "You must specify a hostname, like:"
-  echoLog GREEN "curl -sSL https://go.fspn.network | sudo bash -s [hostname]"
+  echoLog GREEN "curl -sSL https://deploy.fornax.network | sudo bash -s [hostname]"
   exit
 fi
 
 # Hostname
 sid=$1
-echoLog INFO "Setting up hostname ecs-$sid.fspn.network..."
-hostname "ecs-$sid.fspn.network"
-echo -e "ecs-$sid.fspn.network" > /etc/hostname
-sed -i "s/$HOSTNAME/ecs-$sid.fspn.network/g" /etc/hosts
+echoLog INFO "Setting up hostname ecs-$sid.fornax.network..."
+hostname "ecs-$sid.fornax.network"
+echo -e "ecs-$sid.fornax.network" > /etc/hostname
+sed -i "s/$HOSTNAME/ecs-$sid.fornax.network/g" /etc/hosts
 echoLog INFO "Hostname Done."
 
 # BBR
